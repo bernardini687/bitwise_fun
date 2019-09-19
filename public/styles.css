@@ -1,0 +1,98 @@
+label:nth-child(4) {
+  padding-left: 84px;
+}
+
+label:nth-child(8) {
+  padding-left: 84px;
+}
+
+.row {
+  height: 68px;
+}
+
+.row:last-child {
+  height: 136px;
+}
+
+/* customize the label (the container) */
+.container {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+  padding-left: 68px;
+  position: relative;
+  user-select: none;
+}
+
+/* hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* create a custom checkbox */
+.checkmark {
+  border-style: solid;
+  border-color: #dfdfdf;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 64px;
+  width: 64px;
+  background-color: #dfdfdf;
+}
+
+.bit {
+  padding-left: 68px;
+  position: relative;
+}
+
+.zero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 64px;
+  width: 64px;
+  background-color: #dfdfdf;
+}
+
+.one {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 64px;
+  width: 64px;
+  background-color: #404040;
+}
+
+/* on mouse-over, change the border color */
+.container:hover input ~ .checkmark {
+  border-color: #404040;
+}
+
+/* when checked, change the background */
+.container input:checked ~ .checkmark {
+  background-color: #404040;
+  border-color: #404040;
+}
+
+.button {
+  border-style: solid;
+  border-color: #404040;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 64px;
+  width: 64px;
+}
+
+.container:hover input ~ .button {
+  border-color: #fff;
+  background-color: #404040;
+}
