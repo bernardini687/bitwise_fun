@@ -1,9 +1,9 @@
 class BitwiseFun
-  attr_reader :score
+  attr_accessor :score
 
-  def initialize(size)
-    @values = random_nums(size)
+  def initialize
     @score = 0
+    @values = random_nums 2
   end
 
   def bytes
@@ -17,15 +17,13 @@ class BitwiseFun
     answer == guess.to_i(2)
   end
 
-  def redraw!(size)
-    self.score += 1
-    self.values = random_nums(size)
+  def redraw!
+    self.values = random_nums(difficulty)
   end
 
   private
 
-  attr_reader :values
-  attr_writer :score, :values
+  attr_accessor :values
 
   def random_nums(size)
     Array.new(size) { rand 255 }
@@ -33,5 +31,12 @@ class BitwiseFun
 
   def answer
     values.reduce(&:^)
+  end
+
+  def difficulty
+    case score
+    when 1..4 then 2
+    when 5..9 then 3 # (5..)
+    end
   end
 end

@@ -4,22 +4,25 @@ require_relative 'bitwise_fun'
 require 'sinatra'
 require 'sinatra/reloader'
 
-GAME = BitwiseFun.new 2
+GAME = BitwiseFun.new
 
 get '/' do
   guess = params['guess']
 
-  unless guess.nil?
-    if check(guess)
-      GAME.redraw! 2
-    end
-  end
+  conduct_game(guess) unless guess.nil?
 
   erb :index, locals: { bytes: GAME.bytes, score: GAME.score }
 end
 
 private
 
-def check(guess)
+def conduct_game(guess)
+  return unless correct?(guess)
+
+  GAME.score += 1
+  GAME.redraw!
+end
+
+def correct?(guess)
   GAME.correct?(guess)
 end
