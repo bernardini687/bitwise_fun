@@ -19,13 +19,13 @@ class BitwiseFun
 
   def redraw!(size)
     self.score += 1
-    initialize(size)
+    self.values = random_nums(size)
   end
 
   private
 
   attr_reader :values
-  attr_writer :score
+  attr_writer :score, :values
 
   def random_nums(size)
     Array.new(size) { rand 255 }

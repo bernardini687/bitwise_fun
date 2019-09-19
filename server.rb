@@ -5,7 +5,6 @@ require 'sinatra'
 require 'sinatra/reloader'
 
 GAME = BitwiseFun.new 2
-bytes = GAME.bytes
 
 get '/' do
   guess = params['guess']
@@ -13,11 +12,10 @@ get '/' do
   unless guess.nil?
     if check(guess)
       GAME.redraw! 2
-      bytes = GAME.bytes
     end
   end
 
-  erb :index, locals: { bytes: bytes }
+  erb :index, locals: { bytes: GAME.bytes, score: GAME.score }
 end
 
 private
