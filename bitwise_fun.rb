@@ -1,23 +1,37 @@
 class BitwiseFun
+  attr_reader :score
+
   def initialize(size)
-    @values = Array.new(size) { rand 255 }
+    @values = random_nums(size)
+    @score = 0
   end
 
   def bytes
-    @bytes ||= values.map do |value|
+    values.map do |value|
       value.to_s(2).rjust(8, '0')
     end
   end
 
   def correct?(guess)
-    answer == guess
+    # `guess` should be in binary
+    answer == guess.to_i(2)
+  end
+
+  def redraw!(size)
+    self.score += 1
+    initialize(size)
   end
 
   private
 
   attr_reader :values
+  attr_writer :score
+
+  def random_nums(size)
+    Array.new(size) { rand 255 }
+  end
 
   def answer
-    @answer ||= values.reduce(&:^)
+    values.reduce(&:^)
   end
 end
