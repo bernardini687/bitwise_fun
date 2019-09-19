@@ -1,12 +1,6 @@
 class BitwiseFun
-  attr_reader :values
-
   def initialize(size)
     @values = Array.new(size) { rand 255 }
-  end
-
-  def answer
-    @answer ||= values.reduce(&:^)
   end
 
   def bytes
@@ -17,5 +11,13 @@ class BitwiseFun
 
   def correct?(guess)
     answer == guess
+  end
+
+  private
+
+  attr_reader :values
+
+  def answer
+    @answer ||= values.reduce(&:^)
   end
 end
