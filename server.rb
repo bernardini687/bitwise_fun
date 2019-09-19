@@ -7,9 +7,10 @@ require 'sinatra/reloader'
 GAME = BitwiseFun.new
 
 get '/' do
-  guess = params['guess']
-
-  conduct_game(guess) unless guess.nil?
+  unless params.empty?
+    guess = params.values.join
+    conduct_game(guess)
+  end
 
   erb :index, locals: { bytes: GAME.bytes, score: GAME.score }
 end
@@ -26,3 +27,8 @@ end
 def correct?(guess)
   GAME.correct?(guess)
 end
+
+# post?
+# asdf jkl... (keybindings)
+# ?           (how to)
+# &, |, <<, >>, ecc...
