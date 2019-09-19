@@ -6,8 +6,13 @@
     </style>
   </head>
   <body>
-  <% bytes.each do |byte| %>
-    <p><%= byte %></p>
-  <% end %>
+    <% bytes.each do |byte| %>
+      <p><%= byte %></p>
+    <% end %>
+
+    <form>
+      <input type="text" name="guess" placeholder="00000000" />
+      <input type="submit" value="check it!" />
+    </form>
   </body>
 </html>
