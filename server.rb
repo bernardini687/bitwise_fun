@@ -18,14 +18,10 @@ end
 private
 
 def conduct_game(guess)
-  return unless correct?(guess)
+  return unless GAME.correct?(guess)
 
   GAME.score += 1
   GAME.redraw!
-end
-
-def correct?(guess)
-  GAME.correct?(guess)
 end
 
 # refactor css
