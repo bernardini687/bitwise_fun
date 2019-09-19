@@ -28,7 +28,9 @@ def correct?(guess)
   GAME.correct?(guess)
 end
 
+# refactor css
 # post?
 # asdf jkl... (keybindings)
 # ?           (how to)
 # &, |, <<, >>, ecc...
+# screenshots, README, publish
