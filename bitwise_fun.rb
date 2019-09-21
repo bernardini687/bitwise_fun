@@ -37,6 +37,7 @@ class BitwiseFun
     case score
     when 1..4 then 2
     when 5..9 then 3 # (5..)
+    else 4
     end
   end
 end
