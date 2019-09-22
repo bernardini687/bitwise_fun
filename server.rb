@@ -24,9 +24,8 @@ def conduct_game(guess)
   GAME.redraw!
 end
 
-# refactor css
 # post?
-# asdf jkl... (keybindings)
-# ?           (how to)
+# asdf jkl... (keybindings, AJAX)
+# ?           (how to page)
 # &, |, <<, >>, ecc...
 # screenshots, README, publish

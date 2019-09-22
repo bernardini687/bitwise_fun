@@ -12,9 +12,9 @@
             <% byte.split('').each do |bit| %>
               <label class="bit">
                 <% if bit == '0' %>
-                  <span class="zero"></span>
+                  <span class="grey square"></span>
                 <% else %>
-                  <span class="one"></span>
+                  <span class="black square"></span>
                 <% end %>
               </label>
             <% end %>
@@ -25,16 +25,17 @@
       <form>
         <div class="row">
           <% 8.times do |n| %>
-            <label class="container">
+            <label class="container bit">
               <input type="hidden" name="<%= n %>" value="0" />
               <input type="checkbox" name="<%= n %>" value="1" />
-              <span class="checkmark"></span>
+              <span class="interactive square"></span>
             </label>
           <% end %>
         </div>
-        <label class="container">
+
+        <label class="container bit">
           <input type="submit" value="" />
-          <span class="button"></span>
+          <span class="interactive square large"></span>
         </label>
       </form>
 
