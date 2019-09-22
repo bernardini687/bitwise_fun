@@ -1,9 +1,22 @@
+.centric {
+  width: min-content;
+
+  padding-top: 128px;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  margin: auto;
+}
+
 label:nth-child(4) {
   padding-left: 84px;
 }
 
 label:nth-child(8) {
-  padding-left: 84px;
+  padding-left: 64px;
 }
 
 .row {
@@ -70,29 +83,29 @@ label:nth-child(8) {
   background-color: #404040;
 }
 
-/* on mouse-over, change the border color */
-.container:hover input ~ .checkmark {
-  border-color: #404040;
-}
-
 /* when checked, change the background */
 .container input:checked ~ .checkmark {
   background-color: #404040;
   border-color: #404040;
 }
 
+/* on mouse-over, change the border color */
+.container:hover input ~ .checkmark {
+  border-color: #fff;
+}
+
 .button {
   border-style: solid;
-  border-color: #404040;
+  border-color: #dfdfdf;
+  background-color: #dfdfdf;
   box-sizing: border-box;
   position: absolute;
   top: 0;
   left: 0;
   height: 64px;
-  width: 64px;
+  width: 556px;
 }
 
 .container:hover input ~ .button {
   border-color: #fff;
-  background-color: #404040;
 }

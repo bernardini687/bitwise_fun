@@ -1,41 +1,43 @@
 <html>
   <head>
-    <title>bitwise fun</title>
+    <title>bitwise fun (<%= score %>)</title>
     <link href="<%= url '/styles.css' %>" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <p><%= score %></p>
+    <div class="centric">
 
-    <div>
-      <% bytes.each do |byte| %>
+      <div>
+        <% bytes.each do |byte| %>
+          <div class="row">
+            <% byte.split('').each do |bit| %>
+              <label class="bit">
+                <% if bit == '0' %>
+                  <span class="zero"></span>
+                <% else %>
+                  <span class="one"></span>
+                <% end %>
+              </label>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+
+      <form>
         <div class="row">
-          <% byte.split('').each do |bit| %>
-            <label class="bit">
-              <% if bit == '0' %>
-                <span class="zero"></span>
-              <% else %>
-                <span class="one"></span>
-              <% end %>
+          <% 8.times do |n| %>
+            <label class="container">
+              <input type="hidden" name="<%= n %>" value="0" />
+              <input type="checkbox" name="<%= n %>" value="1" />
+              <span class="checkmark"></span>
             </label>
           <% end %>
         </div>
-      <% end %>
-    </div>
-
-    <form>
-      <% 8.times do |n| %>
         <label class="container">
-          <input type="hidden" name="<%= n %>" value="0" />
-          <input type="checkbox" name="<%= n %>" value="1" />
-          <span class="checkmark"></span>
+          <input type="submit" value="" />
+          <span class="button"></span>
         </label>
-      <% end %>
+      </form>
 
-      <label class="container">
-        <input type="submit" value="" />
-        <span class="button"></span>
-      </label>
-    </form>
-
+    </div>
   </body>
 </html>
