@@ -30,10 +30,6 @@ class BitwiseFun
   end
 
   def answer(mode:)
-    # case mode
-    # when :xor then values.reduce(&:^)
-    # when :and then values.reduce(&:&)
-    # end
     values.reduce(&mode)
   end
 

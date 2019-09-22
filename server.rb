@@ -7,16 +7,20 @@ require 'sinatra/reloader'
 GAME = BitwiseFun.new
 
 get '/' do
-  play_mode mode: :^
+  play mode: :^
 end
 
 get '/and' do
-  play_mode mode: :&
+  play mode: :&
+end
+
+get '/or' do
+  play mode: :|
 end
 
 private
 
-def play_mode(mode:)
+def play(mode:)
   unless params.empty?
     guess = params.values.join
     conduct_game(guess, mode)
@@ -35,5 +39,5 @@ end
 # post?
 # asdf jkl... (keybindings, AJAX)
 # ?           (how to page)
-# |, <<, >>, ecc...
+# <<, >>, ecc...
 # screenshots, README, publish
