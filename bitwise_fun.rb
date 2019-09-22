@@ -12,9 +12,9 @@ class BitwiseFun
     end
   end
 
-  def correct?(guess)
+  def correct?(guess, mode)
     # `guess` should be in binary
-    answer == guess.to_i(2)
+    answer(mode: mode) == guess.to_i(2)
   end
 
   def redraw!
@@ -29,8 +29,12 @@ class BitwiseFun
     Array.new(size) { rand 255 }
   end
 
-  def answer
-    values.reduce(&:^)
+  def answer(mode:)
+    # case mode
+    # when :xor then values.reduce(&:^)
+    # when :and then values.reduce(&:&)
+    # end
+    values.reduce(&mode)
   end
 
   def difficulty
