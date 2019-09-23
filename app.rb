@@ -1,4 +1,8 @@
 class Application < Sinatra::Base
+  configure :development do
+    register Sinatra::Reloader
+  end
+
   GAME = BitwiseFun.new
 
   get '/' do
