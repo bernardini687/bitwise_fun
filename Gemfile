@@ -6,10 +6,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}" }
 
 # ruby '2.6.3'
 
-gem 'sinatra', '~> 2.2', require: 'sinatra/base'
+gem 'sinatra', '~> 3.0', require: 'sinatra/base'
 
 # automatic rack reloader
-gem 'sinatra-contrib', '~> 2.2', require: 'sinatra/reloader'
+gem 'sinatra-contrib', '~> 3.0', require: 'sinatra/reloader'
 
 group :test do
   gem 'rack-test', '~> 1.1'
